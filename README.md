@@ -77,3 +77,10 @@ void loop(){
 ```
 
 Expected input `sub_a: value`. (only accepts one value per line... for now)
+
+### TODO:
+(if I ever get time, spoiler alert, I won't)
+- Create a pubsub manager that does both!
+- Better way of adding pubs and subs
+- Python and js modules?? Might be overkill at this point haha
+- Figure out how to dynamically resize the publisher and subscriber arrays, C++ does not like to do this
