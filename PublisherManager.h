@@ -6,14 +6,16 @@
 
 class PublisherManager{
     public:
-        static const int MAX_PUBS = 5;
+        static const int MAX_PUBS = 10;
         Publisher *publishers[MAX_PUBS];
+
+        int num_pubs = 0;
 
         String extra_string = "";
 
         void update();
         void manualPub(String name, double value);
-        void addPublisher(Publisher publisher); // TODO
+        void addPublisher(Publisher &publisher); // TODO
 };
 
 #endif

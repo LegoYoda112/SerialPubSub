@@ -5,7 +5,7 @@
 void SubscriberManager::update(){
 
   if(Serial.available() > 0){
-    //Serial.println("Started parsing");
+    Serial.println("Started parsing");
     char c = 'a';
     int inputIndex = 0;
     String inputString = "";
@@ -42,9 +42,14 @@ void SubscriberManager::update(){
     for(int i = 0; i < 5; i++){
       
       if(name.equals(subscribers[i]->name) == 1){
-        Serial.println(val);
+        // Serial.println(val);
         subscribers[i]->value = val;
       }
     }
   }
+}
+
+void SubscriberManager::addSubscriber(Subscriber &subscriber){
+  subscribers[num_subs] = &subscriber;
+  num_subs++;
 }
