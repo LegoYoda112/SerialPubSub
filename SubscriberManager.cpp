@@ -5,7 +5,6 @@
 void SubscriberManager::update(){
 
   if(Serial.available() > 0){
-    Serial.println("Started parsing");
     char c = 'a';
     int inputIndex = 0;
     String inputString = "";
@@ -20,7 +19,7 @@ void SubscriberManager::update(){
       }
       
       if(c == ' '){
-        inputString.remove(inputString.length()-2);
+        inputString.remove(inputString.length()-1);
         inputArgs[inputIndex] = inputString;
         inputIndex += 1;
         inputString = "";
@@ -39,10 +38,10 @@ void SubscriberManager::update(){
     double val = inputArgs[1].toDouble();
     
     // Search through subscriber list to see if the name matches
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < MAX_SUBS; i++){
       
       if(name.equals(subscribers[i]->name) == 1){
-        // Serial.println(val);
+        Serial.println(val);
         subscribers[i]->value = val;
       }
     }
